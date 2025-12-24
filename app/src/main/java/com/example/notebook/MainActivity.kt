@@ -2,10 +2,7 @@ package com.example.notebook
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.ListView
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,13 +24,11 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, SecondActivity::class.java)
 
         buttonBooks.setOnClickListener {
-            val items = listOf("1984", "Война и мир", "451 Градус по Фаренгейту")
-            intent.putStringArrayListExtra("items", ArrayList(items))
+            intent.putExtra("item", "book")
             startActivity(intent)
         }
         buttonFilms.setOnClickListener {
-            val items = listOf("Титаник", "1+1", "Зелёная миля")
-            intent.putStringArrayListExtra("items", ArrayList(items))
+            intent.putExtra("item", "film")
             startActivity(intent)
         }
 
